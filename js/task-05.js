@@ -8,17 +8,13 @@
 // });
 
 const inputRef = document.querySelector("#name-input");
-const outputRef = document.querySelector("#name-output"); 
+const outputRef = document.querySelector("#name-output");
 
 function onInputChange (event) {
-    outputRef.textContent = event.currentTarget.value;
-};
- 
-function onInputIsEmpty(event) {
-  inputRef.placeholder !== "Please enter your name"
-    ? (outputRef.textContent = event.currentTarget.value)
-    : (outputRef.textContent = "Anonymous");
-};
+  outputRef.textContent = 
+    event.currentTarget.value.trim() !== ""
+    ? event.currentTarget.value
+    : "Anonymous"
+}
 
 inputRef.addEventListener("input", onInputChange);
-// inputRef.addEventListener("input", onInputIsEmpty);

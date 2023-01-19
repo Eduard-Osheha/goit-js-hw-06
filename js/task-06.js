@@ -29,9 +29,10 @@ const lengthOfInputContent = Number(inputRef.dataset.length);
 inputRef.addEventListener("blur", onInputBlur);
 
 function onInputBlur(event) {
-    if (event.currentTarget.value.length === lengthOfInputContent) {
-        inputRef.classList.add("valid");
-        inputRef.classList.replace("invalid","valid");
-    }
-    else {inputRef.classList.replace("valid", "invalid") }
+if ((event.currentTarget.value.length < lengthOfInputContent) || 
+    (event.currentTarget.value.length > lengthOfInputContent)) {
+        inputRef.classList.add("invalid");
+        }
+    
+    else {inputRef.classList.replace("invalid", "valid") }
 };

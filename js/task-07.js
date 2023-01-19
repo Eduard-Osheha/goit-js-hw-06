@@ -8,4 +8,4 @@ function onReactionInputTextSize(event) {
     textEl.style.fontSize = `${event.currentTarget.value}px`; 
 }
 
-inputRef.addEventListener("change", onReactionInputTextSize);
+inputRef.addEventListener("input", onReactionInputTextSize);
